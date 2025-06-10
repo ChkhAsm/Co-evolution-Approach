@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="SequnceDiagram" version="12.0.0.2017041100">
+  <ownedViewpoints name="MyViewpoint">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="SequenceDiagram" domainClass="mM_DSE::SequenceDiagram" enablePopupBars="true">
+      <metamodel href="http://www.example.org/mM_DSE#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="ActivationBar" semanticCandidatesExpression="feature:lifeline" domainClass="mM_DSE::ActivationBar">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="" labelAlignment="LEFT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/Cible.SequnceDiagram.design/Icones/ActivBar.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelFormat>italic</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Acteur" semanticCandidatesExpression="feature:lifeline" domainClass="mM_DSE::Actor">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" labelExpression="aql:self.name" iconPath="/Cible.SequnceDiagram.design/Icones/Icn_acteur.drawio.png" sizeComputationExpression="-1" resizeKind="NORTH_SOUTH" arcWidth="1" workspacePath="/Cible.SequnceDiagram.design/Icones/liifeline.drawio.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelFormat>italic</labelFormat>
+            <labelFormat>underline</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Object" semanticCandidatesExpression="feature:lifeline" domainClass="mM_DSE::Object">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" labelExpression="aql:self.name" iconPath="/Cible.SequnceDiagram.design/Icones/Icn_obj.drawio.png" sizeComputationExpression="-1" resizeKind="NORTH_SOUTH" arcWidth="1" workspacePath="/Cible.SequnceDiagram.design/Icones/liifeline.drawio.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
+            <labelFormat>italic</labelFormat>
+            <labelFormat>underline</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="SynchronMessage" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Acteur'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Object']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Acteur'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Object']" targetFinderExpression="[target/]" sourceFinderExpression="[source/]" domainClass="mM_DSE::Synchron" useDomainElement="true">
+          <style targetArrow="InputFillClosedArrow" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="aql:self.annotation">
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="AsynchronMessage" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Acteur'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Object']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Acteur'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Object']" targetFinderExpression="[target/]" sourceFinderExpression="[source/]" domainClass="mM_DSE::Asynchron" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="aql:self.annotation">
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="SelfMessage" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Acteur'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Object']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Acteur'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Object']" targetFinderExpression="[target/]" sourceFinderExpression="[source/]" domainClass="mM_DSE::SelfMessage" useDomainElement="true">
+          <style targetArrow="InputFillClosedArrow" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="aql:self.annotation">
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ReplyMessage" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Acteur'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Object']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Acteur'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Object']" targetFinderExpression="[target/]" sourceFinderExpression="[source/]" domainClass="mM_DSE::Reply" useDomainElement="true">
+          <style lineStyle="dash" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="aql:self.annotation">
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="CreateMessage" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Acteur'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Object']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Acteur'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Object']" targetFinderExpression="[target/]" sourceFinderExpression="[source/]" domainClass="mM_DSE::SelfMessage" useDomainElement="true">
+          <style lineStyle="dash_dot" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="aql: '&lt; '+self.annotation+' >'">
+              <labelFormat>bold</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="Inetraction" domainClass="mM_DSE::Interaction" reusedNodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Acteur'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Object'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='ActivationBar']">
+          <subContainerMappings name="fragment" semanticCandidatesExpression="feature:eAllContents" domainClass="mM_DSE::CombinedFragment">
+            <subContainerMappings name="Operand" semanticCandidatesExpression="feature:eAllContents" domainClass="mM_DSE::InteractionOperand" reusedNodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@containerMappings[name='Inetraction']/@subContainerMappings[name='fragment']/@subContainerMappings[name='Operand']/@subNodeMappings[name='Constrainte']" reusedContainerMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@containerMappings[name='Inetraction']/@subContainerMappings[name='fragment']">
+              <subNodeMappings name="Constrainte" semanticCandidatesExpression="feature:eAllContents" domainClass="mM_DSE::OperandConstraint">
+                <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:'{ '+self.guard +' }'" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW" height="-1">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                  <labelFormat>bold</labelFormat>
+                  <labelFormat>italic</labelFormat>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                </style>
+              </subNodeMappings>
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" arcWidth="1" workspacePath="/Cible.SequnceDiagram.design/Icones/operrnd.drawio.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </subContainerMappings>
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:' '+self.type" labelAlignment="LEFT" workspacePath="/Cible.SequnceDiagram.design/Icones/cmb_frg.drawio.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelFormat>bold</labelFormat>
+              <labelFormat>italic</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" labelExpression="aql:self.label" labelAlignment="LEFT" workspacePath="/Cible.SequnceDiagram.design/Icones/interaction.drawio .png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="Tools">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Actor" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Acteur']" iconPath="/Cible.SequnceDiagram.design/Palette/Icn_acteur.drawio.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mM_DSE::Actor" referenceName="lifeline"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Object" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Object']" iconPath="/Cible.SequnceDiagram.design/Palette/Icn_obj.drawio.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mM_DSE::Object" referenceName="lifeline"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Constraint" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@containerMappings[name='Inetraction']/@subContainerMappings[name='fragment']/@subContainerMappings[name='Operand']/@subNodeMappings[name='Constrainte']" iconPath="/Cible.SequnceDiagram.design/Palette/Icn_Const.drawio.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mM_DSE::OperandConstraint" referenceName="constraint"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="ActivationaBr" elementsToSelect="var:container" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='ActivationBar']" iconPath="/Cible.SequnceDiagram.design/Palette/Icn_Activ.drawio.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mM_DSE::ActivationBar" referenceName="hasactivation"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Commentaire" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@containerMappings[name='Inetraction']/@subContainerMappings[name='fragment']/@subContainerMappings[name='Operand']/@subNodeMappings[name='Constrainte']" iconPath="/Cible.SequnceDiagram.design/Palette/Icn_note.drawio.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mM_DSE::OperandConstraint" referenceName="constraint"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Frames">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Interaction" containerMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@containerMappings[name='Inetraction']" iconPath="/Cible.SequnceDiagram.design/Palette/Icn_Interact.drawio.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mM_DSE::Interaction" referenceName="interaction"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="CombinedFragment" containerMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@containerMappings[name='Inetraction']/@subContainerMappings[name='fragment']" iconPath="/Cible.SequnceDiagram.design/Palette/Icn_Frg.drawio.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mM_DSE::CombinedFragment" referenceName="combinedfragment"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Operandes" containerMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@containerMappings[name='Inetraction']/@subContainerMappings[name='fragment']/@subContainerMappings[name='Operand']" iconPath="/Cible.SequnceDiagram.design/Palette/IC_oprnd.drawio.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mM_DSE::InteractionOperand" referenceName="operand"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Edges">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Synchron Message" edgeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@edgeMappings[name='SynchronMessage']" iconPath="/Cible.SequnceDiagram.design/Palette/syn_icn.drawio.png" extraSourceMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Acteur'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Object']" extraTargetMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Acteur'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Object']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:target"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mM_DSE::Synchron" referenceName="synchronMessage"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Asychron Message" edgeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@edgeMappings[name='AsynchronMessage']" iconPath="/Cible.SequnceDiagram.design/Palette/Icn_Asynchron.drawio.png" extraSourceMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Acteur'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Object']" extraTargetMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Acteur'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Object']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:target"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mM_DSE::Asynchron" referenceName="asynchronMessage"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Reply Message" edgeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@edgeMappings[name='ReplyMessage']" iconPath="/Cible.SequnceDiagram.design/Palette/rpply.drawio.png" extraSourceMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Acteur'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Object']" extraTargetMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Acteur'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Object']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:target"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mM_DSE::Reply" referenceName="RepyMessage"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Create Message" edgeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@edgeMappings[name='CreateMessage']" iconPath="/Cible.SequnceDiagram.design/Palette/Icn_Ceate.drawio.png" extraSourceMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Acteur'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Object']" extraTargetMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Acteur'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Object']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:target"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mM_DSE::CreatMessage" referenceName="CreatMessage"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Self Message" edgeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@edgeMappings[name='SelfMessage']" iconPath="/Cible.SequnceDiagram.design/Palette/self.drawio.png" extraSourceMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Acteur'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Object']" extraTargetMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Acteur'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='SequenceDiagram']/@defaultLayer/@nodeMappings[name='Object']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:target"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="mM_DSE::SelfMessage" referenceName="SelfMessage"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="Cible.SequnceDiagram.design.Services"/>
+  </ownedViewpoints>
+</description:Group>
