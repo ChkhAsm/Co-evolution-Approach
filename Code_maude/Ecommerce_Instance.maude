@@ -1,0 +1,329 @@
+mod Ecommerce_Instance is
+  protecting SEQUENCE_DIAGRAM .
+
+  --- Identifiants
+  ops Customer EcommercePlatform Database PaymentGateway BankingSystem : -> LifeLineId .
+  ops Accesshomepage DisplayHomepage Browseproducts Browseproducts Requestproductdetails Fetchproductdetails Returnresponse Returnproductdetails Addproducttocart Checktheavailability Response Sendalertcurrentlyunavailable UpdateDisplaycart Enterthedeliveryinformation Sendthedeliveryinformation Redirecttopaymentpage Entercreditcarddetails Checknumberofattempts Verifypayment Responses Incorrectinformationpleasetryagain Toomanyfailedattemptstransactioncanceled Operationissuccessful Updateandconfirmorderstatus Orderconfirmed NotifySendmail ResponseYes Sendmailconfirmation Redirecttohomepage ResponseNo Redirecttohomepage : -> MessageId .
+
+  op notavaible avaible n<=3 Wronginformations n<3 n=3 CorrectInformations sendEmailTrue sendEmailFalse : -> Condition .
+
+  --- Versions UML
+  sort Version .
+  ops UML1.5 UML2.5 : -> Version .
+
+  --- Diagramme de séquence
+  sort SeqDiagram .
+  op [_,_,_] : Version Interaction MsgList -> SeqDiagram [ctor] .
+
+  --- Variables
+  vars list1 list2 : MsgList . 
+
+******************************************** Règles UML 1.5 ******************************************
+rl  [UML15-Accesshomepage] :
+    [UML1.5, none, NoMsg]
+=>  [UML1.5, < (Customer : Actor) , {Accesshomepage : Synchron} , ( EcommercePlatform : Object ) > , NoMsg ; 
+    < (Customer : Actor) , {Accesshomepage : Synchron} , ( EcommercePlatform : Object ) > ] .
+
+rl [UML15-DisplayHomepage] :
+   [UML1.5, < (Customer : Actor), {Accesshomepage : Synchron},(EcommercePlatform : Object) >,list1]
+   => [UML1.5, < (EcommercePlatform : Object), {DisplayHomepage : Reply},(Customer : Actor) >,
+   list1 ; < (EcommercePlatform : Object), {DisplayHomepage : Reply} , (Customer : Actor) >].  
+   
+rl [UML15-Browseproducts] :
+   [UML1.5, < (EcommercePlatform : Object), {DisplayHomepage : Reply} , (Customer : Actor) >,list1]
+   => [UML1.5, < (Customer : Actor) , {Browseproducts : Synchron} , (EcommercePlatform : Object) >,
+   list1 ; < (Customer : Actor) , {Browseproducts : Synchron} , (EcommercePlatform : Object) >].   
+
+rl [UML15-Requestproductdetails] :
+   [UML1.5, < (Customer : Actor) , {Browseproducts : Synchron} , (EcommercePlatform : Object) > , list1]
+   => [UML1.5, < (Customer : Actor) , {Requestproductdetails : Synchron} , (EcommercePlatform : Object) > ,
+   list1 ; < (Customer : Actor) , {Requestproductdetails : Synchron} , (EcommercePlatform : Object) > ].     
+
+rl [UML15-Fetchproductdetails] :
+   [UML1.5, < (Customer : Actor) , {Requestproductdetails : Synchron} , (EcommercePlatform : Object) > , list1]
+   => [UML1.5, < (EcommercePlatform : Object) , {Fetchproductdetails : Synchron} , (Database : Object) > ,
+   list1 ; < (EcommercePlatform : Object) , {Fetchproductdetails : Synchron} , (Database : Object) > ] .     
+
+rl [UML15-Returnresponse] :
+   [UML1.5, < (EcommercePlatform : Object) , {Fetchproductdetails : Synchron} , (Database : Object) > , list1]
+   => [UML1.5, < (Database : Object) , {Returnresponse : Reply} , (EcommercePlatform : Object) > ,
+   list1 ; < (Database : Object) , {Returnresponse : Reply} , (EcommercePlatform : Object) > ]. 
+    
+rl [UML15-Returnproductdetails] :
+   [UML1.5, < (Database : Object) , {Returnresponse : Reply} , (EcommercePlatform : Object) > , list1]
+   => [UML1.5, < (EcommercePlatform : Object) , {Returnproductdetails : Reply} , (Customer : Actor) > ,
+   list1 ; < (EcommercePlatform : Object) , {Returnproductdetails : Reply} , (Customer : Actor) > ]. 
+
+rl [UML15-Addproducttocart] :
+   [UML1.5, < (EcommercePlatform : Object) , {Returnproductdetails : Reply} , (Customer : Actor) > , list1]
+   => [UML1.5, < (Customer : Actor) , {Addproducttocart : Synchron} , (EcommercePlatform : Object) > ,
+   list1 ; < (Customer : Actor) , {Addproducttocart : Synchron} , (EcommercePlatform : Object) > ] .  
+   
+ rl [UML15-Checktheavailability] :
+   [UML1.5, < (Customer : Actor) , {Addproducttocart : Synchron} , (EcommercePlatform : Object) > , list1]
+   => [UML1.5, < (EcommercePlatform : Object) , {Checktheavailability : Synchron} , (Database : Object) > ,
+   list1 ; < (EcommercePlatform : Object) , {Checktheavailability : Synchron} , (Database : Object) > ].  
+   
+rl [UML15-Response] :
+   [UML1.5, < (EcommercePlatform : Object) , {Checktheavailability : Synchron} , (Database : Object) > , list1 ]
+   => [UML1.5 , < (Database : Object) , {Response : Reply} , (EcommercePlatform : Object) > ,
+   list1 ; < (Database : Object), {Response : Reply} , (EcommercePlatform : Object) >].
+
+rl [UML15-Sendalertcurrentlyunavailable] :
+   [UML1.5, < (Database : Object) , {Response : Reply} , (EcommercePlatform : Object) > , list1]
+   => [UML1.5, < (EcommercePlatform : Object) , {Sendalertcurrentlyunavailable : Reply} , (Customer : Actor) >,
+   list1 ; < (EcommercePlatform : Object) , {Sendalertcurrentlyunavailable : Reply} , (Customer : Actor) > ].     
+     
+rl [UML15-UpdateDisplaycart] :
+   [UML1.5, < (EcommercePlatform : Object) , {Sendalertcurrentlyunavailable : Reply} , (Customer : Actor) > ,list1]
+   => [UML1.5, < (EcommercePlatform : Object) , {UpdateDisplaycart : Reply} , (Customer : Actor) > ,
+   list1 ; < (EcommercePlatform : Object) , {UpdateDisplaycart : Reply} , (Customer : Actor) > ]. 
+
+rl [UML15-Enterthedeliveryinformation] :
+   [UML1.5, < (EcommercePlatform : Object) , {UpdateDisplaycart : Reply} , (Customer : Actor) > , list1]
+   => [UML1.5, < (EcommercePlatform : Object) , {Enterthedeliveryinformation : Synchron} , (Customer : Actor) >,
+   list1 ; < (EcommercePlatform : Object) , {Enterthedeliveryinformation : Synchron} , (Customer : Actor) > ]. 
+    
+rl [UML15-Sendthedeliveryinformation] :
+   [UML1.5, < (EcommercePlatform : Object) , {Enterthedeliveryinformation : Synchron} , (Customer : Actor) > , list1]
+   => [UML1.5, < (Customer : Actor) , {Sendthedeliveryinformation : Reply} , (EcommercePlatform : Object) > ,
+   list1 ; < (Customer : Actor) , {Sendthedeliveryinformation : Reply} , (EcommercePlatform : Object) > ].     
+    
+rl [UML15-Redirecttopaymentpage] :
+   [UML1.5, < (Customer : Actor) , {Sendthedeliveryinformation : Reply} , (EcommercePlatform : Object) > , list1]
+   => [UML1.5, < (EcommercePlatform : Object) , {Redirecttopaymentpage : Synchron} , (Customer : Actor) > ,
+   list1 ;  < (EcommercePlatform : Object) , {Redirecttopaymentpage : Synchron} , (Customer : Actor) > ] .   
+  
+rl [UML15-Entercreditcarddetails] :
+   [UML1.5, < (EcommercePlatform : Object), {Redirecttopaymentpage : Synchron},(Customer : Actor) >,list1]
+   => [UML1.5, < (Customer : Actor), {Entercreditcarddetails : Reply},(PaymentGateway : Object) >,
+   list1 ; < (Customer : Actor), {Entercreditcarddetails : Reply}, (PaymentGateway : Object) >]. 
+    
+rl [UML15-Checknumberofattempts] :
+   [UML1.5, < (Customer : Actor), {Entercreditcarddetails : Reply},(PaymentGateway : Object) >,list1]
+   => [UML1.5, < (PaymentGateway : Object), {Checknumberofattempts : SelfMessage},(PaymentGateway : Object) >,
+   list1 ; < (PaymentGateway : Object), {Checknumberofattempts : SelfMessage}, (PaymentGateway : Object) >].     
+   
+rl [UML15-Verifypayment] :
+   [UML1.5, < ( PaymentGateway : Object ) , { Checknumberofattempts : SelfMessage } , ( PaymentGateway : Object ) > , list1]
+   => [UML1.5, < ( PaymentGateway : Object ) , { Verifypayment : Synchron } , ( BankingSystem : Object ) > ,
+   list1 ; < ( PaymentGateway : Object ) , { Verifypayment : Synchron } , ( BankingSystem : Object ) >]. 
+    
+rl [UML15-Responses] :
+   [UML1.5, < ( PaymentGateway : Object ) , { Verifypayment : Synchron } , (BankingSystem : Object) > , list1]
+   => [UML1.5, < ( BankingSystem : Object ) , { Responses : Reply } , (PaymentGateway : Object) > ,
+   list1 ; < (BankingSystem : Object) , {Responses : Reply} , (PaymentGateway : Object) > ].   
+  
+rl [UML15-Incorrectinformationpleasetryagain] :
+   [UML1.5, < (BankingSystem : Object ) , {Responses : Reply} , (PaymentGateway : Object) > , list1]
+   => [UML1.5, < (PaymentGateway : Object ) , {Incorrectinformationpleasetryagain : Synchron} , (Customer : Actor) > ,
+   list1 ; < ( PaymentGateway : Object ) , {Incorrectinformationpleasetryagain : Synchron} , (Customer : Actor) > ]. 
+    
+rl [UML15-Toomanyfailedattemptstransactioncanceled] :
+   [UML1.5, < ( PaymentGateway : Object ) , {Incorrectinformationpleasetryagain : Synchron} , (Customer : Actor) > , list1]
+   => [UML1.5, < (PaymentGateway : Object) , {Toomanyfailedattemptstransactioncanceled : Asynchron} , (Customer : Actor) > ,
+   list1 ; < (PaymentGateway : Object) , {Toomanyfailedattemptstransactioncanceled : Asynchron} , (Customer : Actor) > ]. 
+    
+rl [UML15-Operationissuccessful] :
+   [UML1.5, < (PaymentGateway : Object) , {Toomanyfailedattemptstransactioncanceled : Asynchron} , (Customer : Actor) > ,list1]
+   => [UML1.5, < (PaymentGateway : Object) , {Operationissuccessful : Asynchron} , (EcommercePlatform : Object) > ,
+   list1 ; < (PaymentGateway : Object) , {Operationissuccessful : Asynchron } , (EcommercePlatform : Object) > ].     
+
+rl [UML15-Updateandconfirmorderstatus] :
+   [UML1.5, < ( PaymentGateway : Object ) , {Operationissuccessful : Asynchron } , ( EcommercePlatform : Object ) > , list1]
+   => [UML1.5, < (EcommercePlatform : Object) , {Updateandconfirmorderstatus : Asynchron} , (Database : Object) > ,
+   list1 ; < (EcommercePlatform : Object) , {Updateandconfirmorderstatus : Asynchron} , (Database : Object) > ].     
+
+rl [UML15-Orderconfirmed] :
+   [UML1.5, < ( EcommercePlatform : Object) , {Updateandconfirmorderstatus : Asynchron} , (Database : Object) > , list1]
+   => [UML1.5, < (EcommercePlatform : Object) , {Orderconfirmed : Asynchron} , (Customer : Actor) > ,
+   list1 ; < (EcommercePlatform : Object) , {Orderconfirmed : Asynchron} , (Customer : Actor) > ] .     
+
+rl [UML15-NotifySendmail] :
+   [UML1.5, < ( EcommercePlatform : Object ) , {Orderconfirmed : Asynchron} , (Customer : Actor) > , list1]
+   => [UML1.5, < (EcommercePlatform : Object) , {NotifySendmail : Synchron} , (Customer : Actor) > ,
+   list1 ; < (EcommercePlatform : Object) , {NotifySendmail : Synchron} , (Customer : Actor) > ] . 
+   
+rl [UML15-ResponseYes] :
+   [UML1.5, < (EcommercePlatform : Object) , {NotifySendmail : Synchron} , (Customer : Actor) > , list1]
+   => [UML1.5, < (Customer : Actor) , {ResponseYes : Synchron} , (EcommercePlatform : Object) > ,
+   list1 ; < (Customer : Actor) , {ResponseYes : Synchron} , (EcommercePlatform : Object) > ].     
+
+rl [UML15-Sendmailconfirmation] :
+   [UML1.5, < (Customer : Actor) , {ResponseYes : Synchron} , (EcommercePlatform : Object) > , list1]
+   => [UML1.5, < (EcommercePlatform : Object) , {Sendmailconfirmation : Reply } , (Customer : Actor ) >,
+   list1 ; < ( EcommercePlatform : Object ) , { Sendmailconfirmation : Reply } , (Customer : Actor ) > ] . 
+    
+rl [UML15-Redirecttohomepage] :
+   [UML1.5, < (EcommercePlatform : Object) , {Sendmailconfirmation : Reply} , (Customer : Actor ) > , list1 ]
+   => [UML1.5, < (EcommercePlatform : Object) , {Redirecttohomepage : Asynchron} , (Customer : Actor ) > ,
+   list1 ; < (EcommercePlatform : Object) , {Redirecttohomepage : Asynchron} , (Customer : Actor ) > ].  
+   
+rl [UML15-ResponseNo] :
+   [UML1.5, < ( EcommercePlatform : Object ) , { Redirecttohomepage : Asynchron },( Customer : Actor ) > , list1]
+   => [UML1.5, < (EcommercePlatform : Object ) , { ResponseNo : Synchron } , ( Customer : Actor ) >,
+   list1 ; < ( EcommercePlatform : Object ), { ResponseNo : Synchron }, (Customer : Actor) > ].  
+   
+rl [UML15-Redirecttohomepage] :
+   [UML1.5, < ( EcommercePlatform : Object ) , {ResponseNo : Synchron} , (Customer : Actor) >, list1]
+   => [UML1.5, < (EcommercePlatform : Object) , {Redirecttohomepage : Reply} ,(Customer : Actor) > ,
+   list1 ; < (EcommercePlatform : Object) , {Redirecttohomepage : Reply} , (Customer : Actor) > ].   
+
+
+*************************************** Règles UML 2.5 **** *****************************************
+rl  [UML25-Accesshomepage] :
+    [UML2.5, none, NoMsg]
+=>  [UML2.5,< (Customer : Actor) , {Accesshomepage : Synchron} , ( EcommercePlatform : Object ) > , NoMsg ; 
+    < (Customer : Actor) , {Accesshomepage : Synchron} , ( EcommercePlatform : Object ) > ] .
+
+rl [UML25-DisplayHomepage] :
+   [UML2.5, < (Customer : Actor), {Accesshomepage : Synchron},(EcommercePlatform : Object) >,list2]
+   => [UML2.5, < (EcommercePlatform : Object), {DisplayHomepage : Reply},(Customer : Actor) >,
+   list2 ; < (EcommercePlatform : Object), {DisplayHomepage : Reply}, (Customer : Actor) >]. 
+
+rl [UML25-Browseproducts] :
+   [UML2.5, < (EcommercePlatform : Object), {DisplayHomepage : Reply} , (Customer : Actor) >,list2]
+   => [UML2.5, < (Customer : Actor) , {Browseproducts : Synchron} , (EcommercePlatform : Object) >,
+   list2 ; < (Customer : Actor) , {Browseproducts : Synchron} , (EcommercePlatform : Object) >].  
+
+rl [UML25-Requestproductdetails] :
+   [UML2.5, < (Customer : Actor) , {Browseproducts : Synchron} , (EcommercePlatform : Object) > , list2]
+   => [UML2.5, < (Customer : Actor) , {Requestproductdetails : Synchron} , (EcommercePlatform : Object) > ,
+   list2 ; < (Customer : Actor) , {Requestproductdetails : Synchron} , (EcommercePlatform : Object) > ]. 
+ 
+rl [UML25-Fetchproductdetails] :
+   [UML2.5, < (Customer : Actor) , {Requestproductdetails : Synchron} , (EcommercePlatform : Object) > , list2]
+   => [UML2.5, < (EcommercePlatform : Object) , {Fetchproductdetails : Synchron} , (Database : Object) > ,
+   list2 ; < (EcommercePlatform : Object) , {Fetchproductdetails : Synchron} , (Database : Object) > ] .  
+
+rl [UML25-Returnresponse] :
+   [UML2.5, < (EcommercePlatform : Object) , {Fetchproductdetails : Synchron} , (Database : Object) > , list2]
+   => [UML2.5, < (Database : Object) , {Returnresponse : Reply} , (EcommercePlatform : Object) > ,
+   list2 ; < (Database : Object) , {Returnresponse : Reply} , (EcommercePlatform : Object) > ].     
+   
+rl [UML25-Returnproductdetails] :
+   [UML2.5, < (Database : Object) , {Returnresponse : Reply} , (EcommercePlatform : Object) > , list2]
+   => [UML2.5, < (EcommercePlatform : Object) , {Returnproductdetails : Reply} , (Customer : Actor) > ,
+   list2 ; < (EcommercePlatform : Object) , {Returnproductdetails : Reply} , (Customer : Actor) > ].
+
+rl [UML25-Addproducttocart] :
+   [UML2.5, < (EcommercePlatform : Object) , {Returnproductdetails : Reply} , (Customer : Actor) > , list2]
+   => [UML2.5, < (Customer : Actor) , {Addproducttocart : Synchron} , (EcommercePlatform : Object) > ,
+   list2 ; < (Customer : Actor) , {Addproducttocart : Synchron} , (EcommercePlatform : Object) > ] . 
+
+rl [UML25-Checktheavailability] :
+   [UML2.5, < (Customer : Actor) , {Addproducttocart : Synchron} , (EcommercePlatform : Object) > , list2]
+   => [UML2.5, < (EcommercePlatform : Object) , {Checktheavailability : Synchron} , (Database : Object) > ,
+   list2 ; < (EcommercePlatform : Object) , {Checktheavailability : Synchron} , (Database : Object) > ].  
+   
+rl [UML25-Response] :
+   [UML2.5, < (EcommercePlatform : Object) , {Checktheavailability : Synchron} , (Database : Object) > , list2 ]
+   => [UML2.5 , < (Database : Object) , {Response : Reply} , (EcommercePlatform : Object) > ,
+   list2 ; < (Database : Object), {Response : Reply} , (EcommercePlatform : Object) >].  
+
+rl [UML25-Sendalertcurrentlyunavailable] :
+   [UML2.5, < (Database : Object) , {Response : Reply} , (EcommercePlatform : Object) > ,list2]
+=> [UML2.5, Alt{"notavaible" : < (EcommercePlatform : Object) , {Sendalertcurrentlyunavailable : Reply} , (Customer : Actor) >},
+   list2 ; < (EcommercePlatform : Object) , {Sendalertcurrentlyunavailable : Reply} , (Customer : Actor) > ] .
+
+rl [ UML25-UpdateDisplaycart] :
+   [ UML2.5, Alt{"notavaible" : < (EcommercePlatform : Object) , {Sendalertcurrentlyunavailable : Reply} , (Customer : Actor) >} ,list2]
+=> [ UML2.5, Alt{"avaible" : < (EcommercePlatform : Object) , {UpdateDisplaycart : Reply} , (Customer : Actor) > },
+   list2 ; < (EcommercePlatform : Object) , {UpdateDisplaycart : Reply} , (Customer : Actor) > ] .
+
+rl [ UML25-Enterthedeliveryinformation] :
+   [ UML2.5, Alt{"avaible" : < (EcommercePlatform : Object) , {UpdateDisplaycart : Reply} , (Customer : Actor) > }, list2]
+=> [ UML2.5, Alt{"avaible" : <(EcommercePlatform : Object) , {Enterthedeliveryinformation : Synchron} , (Customer : Actor) > },
+   list2 ; < (EcommercePlatform : Object) , {Enterthedeliveryinformation : Synchron} , (Customer : Actor) > ] .
+
+rl [ UML25-Sendthedeliveryinformation] :
+   [ UML2.5, Alt{"avaible" : <(EcommercePlatform : Object) , {Enterthedeliveryinformation : Synchron} , (Customer : Actor) > }, list2]
+=> [ UML2.5, Alt{"avaible" : <(Customer : Actor) , {Sendthedeliveryinformation : Reply} , (EcommercePlatform : Object) > } ,
+   list2 ; < (Customer : Actor) , {Sendthedeliveryinformation : Reply} , (EcommercePlatform : Object) > ] .
+
+rl [ UML25-Redirecttopaymentpage] :
+   [ UML2.5, Alt{"avaible" : <(Customer : Actor) , {Sendthedeliveryinformation : Reply} , (EcommercePlatform : Object) > } , list2]
+=> [ UML2.5, Alt{"avaible" : <(EcommercePlatform : Object) , {Redirecttopaymentpage : Synchron} , (Customer : Actor) > },
+   list2 ; < (EcommercePlatform : Object) , {Redirecttopaymentpage : Synchron} , (Customer : Actor) > ] .
+
+rl [ UML25-Entercreditcarddetails] :
+   [ UML2.5, Alt{"avaible" : <(EcommercePlatform : Object) , {Redirecttopaymentpage : Synchron} , (Customer : Actor) > } , list2]
+=> [ UML2.5, Loop {1 , 3 ,"n<=3" : < (Customer : Actor) , {Entercreditcarddetails : Reply} , (PaymentGateway : Object) > } ,
+   list2 ; < (Customer : Actor) , {Entercreditcarddetails : Reply} , (PaymentGateway : Object) > ] .
+
+rl [ UML25-Checknumberofattempts] :
+   [ UML2.5, Loop { 1 , 3 ,"n<=3" : < (Customer : Actor) , {Entercreditcarddetails : Reply} , (PaymentGateway : Object) > } ,list2]
+=> [ UML2.5, Loop { 1 , 3 ,"n<=3" : < (PaymentGateway : Object) , {Checknumberofattempts : SelfMessage} , (PaymentGateway : Object) > },
+   list2 ; < (PaymentGateway : Object) , {Checknumberofattempts : SelfMessage} , (PaymentGateway : Object) > ] .
+
+rl [ UML25-Verifypayment] :
+   [ UML2.5, Loop { 1 , 3 ,"n<=3" : < (PaymentGateway : Object) , {Checknumberofattempts : SelfMessage} , (PaymentGateway : Object) > }, list2]
+=> [ UML2.5, Loop { 1 , 3 ,"n<=3" : < (PaymentGateway : Object) , {Verifypayment : Synchron},(BankingSystem : Object) > } ,
+   list2 ; < (PaymentGateway : Object) , {Verifypayment : Synchron} , (BankingSystem : Object) > ] .
+
+rl [ UML25-Responses] :
+   [ UML2.5, Loop { 1 , 3 ,"n<=3" : < (PaymentGateway : Object) , {Verifypayment : Synchron},(BankingSystem : Object) > } ,  list2]
+=> [ UML2.5, Loop { 1 , 3 ,"n<=3" : < (BankingSystem : Object) , { Responses : Reply } , ( PaymentGateway : Object ) > } ,
+   list2 ; < ( BankingSystem : Object ) , { Responses : Reply } ,( PaymentGateway : Object ) > ] .
+
+rl [ UML25-Incorrectinformationpleasetryagain] :
+   [ UML2.5, Loop { 1 , 3 ,"n<=3" : < (BankingSystem : Object) , { Responses : Reply } , ( PaymentGateway : Object ) > } , list2]
+=> [ UML2.5, Alt {"n < 3" : < ( PaymentGateway : Object ) , { Incorrectinformationpleasetryagain : Synchron } , (Customer : Actor) > },
+   list2 ; < (PaymentGateway : Object) , { Incorrectinformationpleasetryagain : Synchron } , (Customer : Actor) > ] .
+
+rl [ UML25-Toomanyfailedattemptstransactioncanceled] :
+   [ UML2.5, Alt {"n < 3" : < ( PaymentGateway : Object ) , { Incorrectinformationpleasetryagain : Synchron } , (Customer : Actor ) > }, list2]
+=> [ UML2.5, Alt {"n = 3" : < ( PaymentGateway : Object ) , { Toomanyfailedattemptstransactioncanceled : Asynchron } , ( Customer : Actor ) > },
+   list2 ; < ( PaymentGateway : Object ) , { Toomanyfailedattemptstransactioncanceled : Asynchron } , (Customer : Actor) > ] .
+
+rl [ UML25-Operationissuccessful] :
+   [ UML2.5, Alt {"n = 3" : < ( PaymentGateway : Object ) , { Toomanyfailedattemptstransactioncanceled : Asynchron } , ( Customer : Actor ) > }, list2]
+=> [ UML2.5, Alt {"CorrectInformations" : < ( PaymentGateway : Object ) , { Operationissuccessful : Asynchron } , ( EcommercePlatform : Object ) > },
+   list2 ; < (PaymentGateway : Object ) , { Operationissuccessful : Asynchron } , ( EcommercePlatform : Object ) > ] .
+
+rl [ UML25-Updateandconfirmorderstatus] :
+   [ UML2.5, Alt {"CorrectInformations" : < ( PaymentGateway : Object ) , { Operationissuccessful : Asynchron } , ( EcommercePlatform : Object ) > }, list2]
+=> [ UML2.5, Alt {"CorrectInformations" : < ( EcommercePlatform : Object) , { Updateandconfirmorderstatus : Asynchron } , ( Database : Object ) > },
+   list2 ; < (EcommercePlatform : Object) , {Updateandconfirmorderstatus : Asynchron} , (Database : Object) > ] .
+
+rl [ UML25-Orderconfirmed] :
+   [ UML2.5, Alt {"CorrectInformations" : < ( EcommercePlatform : Object) , { Updateandconfirmorderstatus : Asynchron } , ( Database : Object ) > }, list2]
+=> [ UML2.5, Alt {"CorrectInformations" : < (EcommercePlatform : Object) , {Orderconfirmed : Asynchron} , (Customer : Actor) > } ,
+   list2 ; < (EcommercePlatform : Object) , {Orderconfirmed : Asynchron} , (Customer : Actor) > ] .
+
+rl [ UML25-NotifySendmail] :
+   [ UML2.5, Alt {"CorrectInformations" : < (EcommercePlatform : Object) , {Orderconfirmed : Asynchron} , (Customer : Actor) > } , list2]
+=> [ UML2.5, Alt {"CorrectInformations" : < (EcommercePlatform : Object) , {NotifySendmail : Synchron} , (Customer : Actor) > } ,
+   list2 ; < (EcommercePlatform : Object) , {NotifySendmail : Synchron} , (Customer : Actor) > ] .
+
+rl [ UML25-ResponseYes] :
+   [ UML2.5, Alt {"CorrectInformations" : < (EcommercePlatform : Object) , {NotifySendmail : Synchron} , (Customer : Actor) > } , list2]
+=> [ UML2.5, Opt {"sendEmailTrue" : <(Customer : Actor),{ResponseYes : Synchron},(EcommercePlatform : Object) >},
+   list2 ; < (Customer : Actor) , {ResponseYes : Synchron} , (EcommercePlatform : Object) > ] .
+
+rl [ UML25-Sendmailconfirmation] :
+   [ UML2.5, Opt {"sendEmailTrue" : < (Customer : Actor) , {ResponseYes : Synchron} , (EcommercePlatform : Object) > }, list2]
+=> [ UML2.5, Opt {"sendEmailTrue" : < (EcommercePlatform : Object) , {Sendmailconfirmation : Reply} , (Customer : Actor) > } ,
+   list2 ; < (EcommercePlatform : Object) , {Sendmailconfirmation : Reply} , (Customer : Actor) > ] .
+
+rl [ UML25-Redirecttohomepage] :
+   [ UML2.5, Opt {"sendEmailTrue" : < (EcommercePlatform : Object) , {Sendmailconfirmation : Reply} , (Customer : Actor) > } , list2]
+=> [ UML2.5, Opt {"sendEmailTrue" : <(EcommercePlatform : Object) , {Redirecttohomepage : Asynchron} , (Customer : Actor) > },
+   list2 ; < (EcommercePlatform : Object) , {Redirecttohomepage : Asynchron} , (Customer : Actor) > ] .
+
+rl [ UML25-ResponseNo] :
+   [ UML2.5, Opt {"sendEmailTrue" : <(EcommercePlatform : Object) , {Redirecttohomepage : Asynchron} , (Customer : Actor) > }, list2 ]
+=> [ UML2.5, Opt {"sendEmailFalse" : < (EcommercePlatform : Object) , {ResponseNo : Synchron} , (Customer : Actor) > } ,
+   list2 ; < ( EcommercePlatform : Object ) , { ResponseNo : Synchron } , ( Customer : Actor ) > ] .
+
+rl [ UML25-Redirecttohomepage] :
+   [ UML2.5, Opt {"sendEmailFalse" : < (EcommercePlatform : Object) , {ResponseNo : Synchron} , (Customer : Actor) > } , list2 ]
+=> [ UML2.5, Opt {"sendEmailFalse" : < (EcommercePlatform : Object) , {Redirecttohomepage : Reply} , (Customer : Actor) > } ,
+   list2 ; < (EcommercePlatform : Object) , {Redirecttohomepage : Reply} , (Customer : Actor) > ] .  
+
+endm
+
+
+
+
+

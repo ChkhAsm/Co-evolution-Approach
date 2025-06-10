@@ -1,0 +1,28 @@
+load model-checker.maude
+mod COMPARISON_PREDS is
+  inc Ecommerce_Instance .
+  inc SATISFACTION .
+  inc MODEL-CHECKER .
+
+  sort Config .
+
+  op (_,_) : SeqDiagram SeqDiagram -> Config .
+  subsort Config < State .
+
+  vars V1 V2 : Version .
+  var msglist : MsgList .
+  vars interaction1 interaction2 : Interaction .
+
+  --- Déclaration du prédicat
+  ops IsIdentical : -> Prop .
+
+  eq ([V1, interaction1, msglist] , [V2, interaction2, msglist] ) |= IsIdentical = true .
+
+  --- Déclarations des deux diagrammes (peuvent être modifiés pour vos scénarios)
+  ops Dia-V1.5 Dia-V2.5 : -> SeqDiagram .
+  eq  Dia-V1.5 = [UML1.5, none, NoMsg] .
+  eq  Dia-V2.5 = [UML2.5, none, NoMsg] . 
+endm
+
+--- Vérification LTL avec le nouveau prédicat
+red modelCheck((Dia-V1.5 , Dia-V2.5) , <> IsIdentical) .
