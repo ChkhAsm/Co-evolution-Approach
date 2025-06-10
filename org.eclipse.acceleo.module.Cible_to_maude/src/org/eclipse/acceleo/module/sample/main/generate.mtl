@@ -1,0 +1,60 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.example.org/mM_DSE')]
+[template public generateElement(aSequenceDiagram : SequenceDiagram)]
+[comment @main/]
+[file (aSequenceDiagram.name.concat('.maude'), false, 'UTF-8')]
+in E-commerceInstance.maude
+mod a [aSequenceDiagram.name/] is
+protecting SEQUENCE_DIAGRAM .
+[aSequenceDiagram.generateUML25Rules()/]
+endm
+[/file]
+[/template]
+[template public generateUML25Rules(diagram : SequenceDiagram) post(tokenize('\n'))]
+[for (interaction : Interaction | diagram.interaction)]
+
+  [if interaction.message->size() > 0]
+
+    [comment Première règle /]
+       rl ['['/] UML25-[interaction.message->at(1).id.replaceAll(' ', '')/]] :
+       ['['/] UML2.5, none, NoMsg]
+    => ['['/] UML2.5, 
+         < ([interaction.message->at(1).source.name.replaceAll(' ', '')/] : [interaction.message->at(1).source.eClass().name/]), {[interaction.message->at(1).id.replaceAll(' ', '')/] : [interaction.message->at(1).eClass().name/]},([interaction.message->at(1).target.name.replaceAll(' ', '')/] : [interaction.message->at(1).target.eClass().name/]) >,
+         NoMsg ; 
+         < ([interaction.message->at(1).source.name.replaceAll(' ', '')/] : [interaction.message->at(1).source.eClass().name/]), {[interaction.message->at(1).id.replaceAll(' ', '')/] : [interaction.message->at(1).eClass().name/]}, ([interaction.message->at(1).target.name.replaceAll(' ', '')/] : [interaction.message->at(1).target.eClass().name/]) > ] .
+  
+    [comment Règles suivantes /]
+    [for (m : Message | interaction.message->excluding(interaction.message->at(1))->asSequence())]
+      [let i : Integer = interaction.message->indexOf(m)]
+      rl ['['/] UML25-[ m.id.replaceAll(' ', '')/]] :
+         ['['/] UML2.5, 
+           < ([interaction.message->at(i - 1).source.name.replaceAll(' ', '')/] : [interaction.message->at(i - 1).source.eClass().name/]), {[interaction.message->at(i - 1).id.replaceAll(' ', '')/] : [interaction.message->at(i - 1).eClass().name/]},([interaction.message->at(i - 1).target.name.replaceAll(' ', '')/] : [interaction.message->at(i - 1).target.eClass().name/]) >, 
+           list2]
+      => ['['/]UML2.5, 
+           < ([m.source.name.replaceAll(' ', '')/] : [m.source.eClass().name/]), {[m.id.replaceAll(' ', '')/] : [m.eClass().name/]}, ([m.target.name.replaceAll(' ', '')/] : [m.target.eClass().name/]) >,
+           list2 ; 
+           < ([m.source.name.replaceAll(' ', '')/] : [m.source.eClass().name/]), {[m.id.replaceAll(' ', '')/] : [m.eClass().name/]}, ([m.target.name.replaceAll(' ', '')/] : [m.target.eClass().name/]) >] .
+[/let][/for][/if][/for]
+
+[for (fragment : CombinedFragment | interaction.combinedfragment)]
+  [for (op : InteractionOperand | fragment.operand)]
+    [for (msg : Message | op.message)]
+   [let ii : Integer = op.message->indexOf(msg)]
+      [let condition : String = if op.constraint.oclIsUndefined() or op.constraint.guard.oclIsUndefined() then 'cond1' else op.constraint.guard endif]
+        [let operatorString : String = fragment.type.toString().replaceAll(' ', '')]
+
+rl ['['/] UML25-[msg.id.replaceAll(' ', '')/]] :
+  ['['/] UML2.5, 
+  < ([op.message->at(ii-1).source.name.replaceAll(' ', '')/] : [op.message->at(ii-1).source.eClass().name/]), {[op.message->at(ii-1).id.replaceAll(' ', '')/] : [op.message->at(ii-1).eClass().name/]},([op.message->at(ii-1).target.name.replaceAll(' ', '')/] : [op.message->at(ii-1).target.eClass().name/]) >,list2]
+=> ['['/] UML2.5,
+    [operatorString/]{"[condition/]" : <([msg.source.name.replaceAll(' ', '')/] : [msg.source.eClass().name/]),{[msg.id.replaceAll(' ', '')/] : [msg.eClass().name/]},([msg.target.name.replaceAll(' ', '')/] : [msg.target.eClass().name/]) >},
+    list2 ; <([msg.source.name.replaceAll(' ', '')/] : [msg.source.eClass().name/]),{[msg.id.replaceAll(' ', '')/] : [msg.eClass().name/]},([msg.target.name.replaceAll(' ', '')/] : [msg.target.eClass().name/]) >] .
+[/let] [/let][/let] [/for] [/for]
+[/for]
+[/template]
+
+
+
+
+
+
