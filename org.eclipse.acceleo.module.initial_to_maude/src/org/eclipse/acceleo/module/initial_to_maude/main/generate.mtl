@@ -1,0 +1,91 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.example.org/mM_DSI')]
+[template public generateElement(aSequenceDiagram : SequenceDiagram)]
+[comment @main/]
+[file (aSequenceDiagram.name.concat('.maude'), false, 'UTF-8')]
+mod a [aSequenceDiagram.name/] is
+protecting SEQUENCE_DIAGRAM .
+--- Identifiants des lifelines
+[aSequenceDiagram.generateLifeLineIds()/]
+[aSequenceDiagram.generateMessageIds()/]
+[aSequenceDiagram.generateConditions()/]
+-- Versions UML
+sort Version .
+ops UML1.5 UML2.5 : -> Version .
+--- Diagramme de séquence
+sort SeqDiagram .
+op ['['/]_,_,_]: Version Interaction MsgList -> SeqDiagram ['['/]ctor] .
+--- Variables
+vars list1 list2 : MsgList .
+--- Regles
+[aSequenceDiagram.generateUML15Rules()/]
+endm
+[/file]
+[/template]
+[template private generateLifeLineIds(diagram : SequenceDiagram) post(tokenize('\n'))]
+ops [for (l : LifeLine | diagram.lifeline) separator(' ')][l.name.replaceAll(' ', '')/][/for] :-> LifeLineId .
+[/template]
+
+[template private generateMessageIds(diagram : SequenceDiagram) post(tokenize('\n'))]
+[if diagram.message->notEmpty()]
+ops 
+
+[for (id : String | diagram.message->collect(m | m.id)->asSet()) 
+
+separator(' ')]
+
+[id.replaceAll(' ', '').replaceAll(',', '')/]
+
+[/for]
+
+: -> MessageId .
+
+[/if]
+[/template]
+
+[template private generateConditions(diagram : SequenceDiagram) post(tokenize('\n'))]
+[comment 'Récupère toutes les conditions (clause) dans tous les ControlFlow, même imbriqués'/]
+[if not diagram.eAllContents(ControlFlow)->isEmpty()]
+ops  
+[for (cf : ControlFlow | diagram.eAllContents(ControlFlow)->select(c | not c.clause.oclIsUndefined())) separator(' ')]
+[cf.clause.replaceAll(' ', '')/]
+[/for]
+: -> Condition .
+[/if]
+[/template]
+
+[template public generateUML15Rules(diagram : SequenceDiagram)]
+
+[if diagram.message->size() > 0]
+  [comment Première règle /]
+  rl ['['/]UML15-[diagram.message->at(1).id.replaceAll(' ', '')/]] :
+     ['['/]UML1.5, none, NoMsg]
+  => ['['/]UML1.5, 
+       < ([diagram.message->at(1).source.name.replaceAll(' ', '')/] : [diagram.message->at(1).source.eClass().name/]), {[diagram.message->at(1).id.replaceAll(' ', '')/] : [diagram.message->at(1).eClass().name/]}, ([diagram.message->at(1).target.name.replaceAll(' ', '')/] : [diagram.message->at(1).target.eClass().name/]) >,
+       NoMsg ; 
+       < ([diagram.message->at(1).source.name.replaceAll(' ', '')/] : [diagram.message->at(1).source.eClass().name/]), {[diagram.message->at(1).id.replaceAll(' ', '')/] : [diagram.message->at(1).eClass().name/]}, ([diagram.message->at(1).target.name.replaceAll(' ', '')/] : [diagram.message->at(1).target.eClass().name/]) >].
+
+  [comment Règles suivantes /]
+  [for (m : Message | diagram.message->excluding(diagram.message->at(1))->asSequence())]
+  [let i : Integer = diagram.message->indexOf(m)]
+    
+    rl ['['/]UML15-[m.id.replaceAll(' ', '')/]] :
+       ['['/]UML1.5, 
+       < ([diagram.message->at(i-1).source.name.replaceAll(' ', '')/] : [diagram.message->at(i-1).source.eClass().name/]), {[diagram.message->at(i-1).id.replaceAll(' ', '')/] : [diagram.message->at(i-1).eClass().name/]},([diagram.message->at(i-1).target.name.replaceAll(' ', '')/] : [diagram.message->at(i-1).target.eClass().name/]) >, 
+       list1]
+    => ['['/]UML1.5, 
+         < ([m.source.name.replaceAll(' ', '')/] : [m.source.eClass().name/]), {[m.id.replaceAll(' ', '')/] : [m.eClass().name/]},([m.target.name.replaceAll(' ', '')/] : [m.target.eClass().name/]) >,
+         list1 ; 
+         < ([m.source.name.replaceAll(' ', '')/] : [m.source.eClass().name/]), {[m.id.replaceAll(' ', '')/] : [m.eClass().name/]}, ([m.target.name.replaceAll(' ', '')/] : [m.target.eClass().name/]) >].
+         
+  [/let]
+  [/for]
+[/if]
+
+[/template]
+
+
+
+
+
+
