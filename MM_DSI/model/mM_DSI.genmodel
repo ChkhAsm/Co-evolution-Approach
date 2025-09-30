@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/MM_DSI/src-gen" creationIcons="false" editDirectory="/MM_DSI.edit/src-gen"
+    editorDirectory="/MM_DSI.editor/src-gen" modelPluginID="MM_DSI" modelName="MM_DSI"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="17.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>mM_DSI.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="MM_DSI" disposableProviderFactory="true" ecorePackage="mM_DSI.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mM_DSI.ecore#//ControlType">
+      <genEnumLiterals ecoreEnumLiteral="mM_DSI.ecore#//ControlType/Alternative"/>
+      <genEnumLiterals ecoreEnumLiteral="mM_DSI.ecore#//ControlType/Repetition"/>
+      <genEnumLiterals ecoreEnumLiteral="mM_DSI.ecore#//ControlType/Option"/>
+      <genEnumLiterals ecoreEnumLiteral="mM_DSI.ecore#//ControlType/Parallel"/>
+      <genEnumLiterals ecoreEnumLiteral="mM_DSI.ecore#//ControlType/exception"/>
+    </genEnums>
+    <genClasses ecoreClass="mM_DSI.ecore#//SequenceDiagram">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mM_DSI.ecore#//SequenceDiagram/lifeline"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mM_DSI.ecore#//SequenceDiagram/message"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mM_DSI.ecore#//SequenceDiagram/controlFlow"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mM_DSI.ecore#//SequenceDiagram/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mM_DSI.ecore#//SequenceDiagram/definition"/>
+    </genClasses>
+    <genClasses ecoreClass="mM_DSI.ecore#//LifeLine">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mM_DSI.ecore#//LifeLine/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mM_DSI.ecore#//LifeLine/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mM_DSI.ecore#//LifeLine/hasactivation"/>
+    </genClasses>
+    <genClasses ecoreClass="mM_DSI.ecore#//Message">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mM_DSI.ecore#//Message/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mM_DSI.ecore#//Message/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mM_DSI.ecore#//Message/id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mM_DSI.ecore#//Message/sequencegroup"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mM_DSI.ecore#//Message/description"/>
+    </genClasses>
+    <genClasses ecoreClass="mM_DSI.ecore#//SequenceFlow">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mM_DSI.ecore#//SequenceFlow/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mM_DSI.ecore#//SequenceFlow/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mM_DSI.ecore#//SequenceFlow/controlflow"/>
+    </genClasses>
+    <genClasses ecoreClass="mM_DSI.ecore#//Object"/>
+    <genClasses ecoreClass="mM_DSI.ecore#//Actor"/>
+    <genClasses ecoreClass="mM_DSI.ecore#//Asynchron"/>
+    <genClasses ecoreClass="mM_DSI.ecore#//Synchron"/>
+    <genClasses ecoreClass="mM_DSI.ecore#//Reply"/>
+    <genClasses ecoreClass="mM_DSI.ecore#//SelfMessage"/>
+    <genClasses ecoreClass="mM_DSI.ecore#//CreatMessage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mM_DSI.ecore#//CreatMessage/isCreation"/>
+    </genClasses>
+    <genClasses ecoreClass="mM_DSI.ecore#//Activation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mM_DSI.ecore#//Activation/id"/>
+    </genClasses>
+    <genClasses ecoreClass="mM_DSI.ecore#//ControlFlow">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mM_DSI.ecore#//ControlFlow/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mM_DSI.ecore#//ControlFlow/clause"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mM_DSI.ecore#//ControlFlow/message"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mM_DSI.ecore#//ControlFlow/sequenceflow"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mM_DSI.ecore#//ControlFlow/repCount"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

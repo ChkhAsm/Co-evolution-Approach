@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="ASCII"?>
+<compare:Comparison xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:compare="http://www.eclipse.org/emf/compare">
+  <matchedResources leftURI="platform:/resource/Delta_MM/mM_DSE.ecore"/>
+  <matchedResources rightURI="platform:/resource/Delta_MM/mM_DSI.ecore"/>
+  <matches>
+    <submatches>
+      <submatches>
+        <submatches>
+          <differences xsi:type="compare:AttributeChange" kind="CHANGE">
+            <attribute href="http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry/value"/>
+          </differences>
+          <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//Asynchron/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"/>
+          <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//Asynchron/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"/>
+        </submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//Asynchron/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"/>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//Asynchron/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"/>
+      </submatches>
+      <submatches>
+        <submatches>
+          <differences xsi:type="compare:AttributeChange" kind="CHANGE">
+            <attribute href="http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry/key"/>
+          </differences>
+          <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//Asynchron/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
+          <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//Asynchron/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
+        </submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//Asynchron/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//Asynchron/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
+      </submatches>
+      <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//Asynchron"/>
+      <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//Asynchron"/>
+    </submatches>
+    <submatches>
+      <submatches>
+        <submatches>
+          <differences xsi:type="compare:AttributeChange" kind="CHANGE">
+            <attribute href="http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry/value"/>
+          </differences>
+          <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//Synchron/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"/>
+          <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//Synchron/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"/>
+        </submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//Synchron/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"/>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//Synchron/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"/>
+      </submatches>
+      <submatches>
+        <submatches>
+          <differences xsi:type="compare:AttributeChange" kind="CHANGE">
+            <attribute href="http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry/key"/>
+          </differences>
+          <differences xsi:type="compare:AttributeChange" kind="CHANGE">
+            <attribute href="http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry/value"/>
+          </differences>
+          <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//Synchron/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
+          <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//Synchron/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
+        </submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//Synchron/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//Synchron/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
+      </submatches>
+      <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//Synchron"/>
+      <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//Synchron"/>
+    </submatches>
+    <submatches>
+      <submatches>
+        <submatches>
+          <differences xsi:type="compare:AttributeChange" kind="CHANGE">
+            <attribute href="http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry/value"/>
+          </differences>
+          <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//Reply/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"/>
+          <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//Reply/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"/>
+        </submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//Reply/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"/>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//Reply/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"/>
+      </submatches>
+      <submatches>
+        <submatches>
+          <differences xsi:type="compare:AttributeChange" kind="CHANGE">
+            <attribute href="http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry/key"/>
+          </differences>
+          <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//Reply/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
+          <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//Reply/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
+        </submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//Reply/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//Reply/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
+      </submatches>
+      <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//Reply"/>
+      <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//Reply"/>
+    </submatches>
+    <submatches>
+      <submatches>
+        <submatches>
+          <differences xsi:type="compare:AttributeChange" kind="CHANGE">
+            <attribute href="http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry/value"/>
+          </differences>
+          <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//SelfMessage/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"/>
+          <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//SelfMessage/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"/>
+        </submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//SelfMessage/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"/>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//SelfMessage/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"/>
+      </submatches>
+      <submatches>
+        <submatches>
+          <differences xsi:type="compare:AttributeChange" kind="CHANGE">
+            <attribute href="http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry/key"/>
+          </differences>
+          <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//SelfMessage/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
+          <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//SelfMessage/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
+        </submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//SelfMessage/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//SelfMessage/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
+      </submatches>
+      <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//SelfMessage"/>
+      <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//SelfMessage"/>
+    </submatches>
+    <submatches>
+      <submatches>
+        <submatches>
+          <differences xsi:type="compare:AttributeChange" kind="CHANGE">
+            <attribute href="http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry/value"/>
+          </differences>
+          <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//CreatMessage/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"/>
+          <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//CreatMessage/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"/>
+        </submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//CreatMessage/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"/>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//CreatMessage/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"/>
+      </submatches>
+      <submatches>
+        <submatches>
+          <differences xsi:type="compare:AttributeChange" kind="CHANGE">
+            <attribute href="http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry/key"/>
+          </differences>
+          <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//CreatMessage/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
+          <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//CreatMessage/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
+        </submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//CreatMessage/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//CreatMessage/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
+      </submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//CreatMessage/isCreation"/>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//CreatMessage/isCreation"/>
+      </submatches>
+      <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//CreatMessage"/>
+      <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//CreatMessage"/>
+    </submatches>
+    <submatches>
+      <submatches>
+        <submatches>
+          <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//OperandConstraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"/>
+        </submatches>
+        <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@submatches.5/@differences.1">
+          <reference href="http://www.eclipse.org/emf/2002/Ecore#//EAnnotation/details"/>
+          <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//OperandConstraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"/>
+        </differences>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//OperandConstraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"/>
+      </submatches>
+      <submatches>
+        <submatches>
+          <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//OperandConstraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
+        </submatches>
+        <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@submatches.5/@differences.0">
+          <reference href="http://www.eclipse.org/emf/2002/Ecore#//EAnnotation/details"/>
+          <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//OperandConstraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
+        </differences>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//OperandConstraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
+      </submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//OperandConstraint/guard"/>
+      </submatches>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@differences.3" requiredBy="//@matches.0/@submatches.5/@submatches.1/@differences.0">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EModelElement/eAnnotations"/>
+        <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//OperandConstraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@differences.3" requiredBy="//@matches.0/@submatches.5/@submatches.0/@differences.0">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EModelElement/eAnnotations"/>
+        <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//OperandConstraint/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@differences.3">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+        <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//OperandConstraint/guard"/>
+      </differences>
+      <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//OperandConstraint"/>
+    </submatches>
+    <submatches>
+      <submatches>
+        <submatches>
+          <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//InteractionOperand/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"/>
+        </submatches>
+        <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@submatches.6/@differences.1">
+          <reference href="http://www.eclipse.org/emf/2002/Ecore#//EAnnotation/details"/>
+          <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//InteractionOperand/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"/>
+        </differences>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//InteractionOperand/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"/>
+      </submatches>
+      <submatches>
+        <submatches>
+          <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//InteractionOperand/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
+        </submatches>
+        <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@submatches.6/@differences.0">
+          <reference href="http://www.eclipse.org/emf/2002/Ecore#//EAnnotation/details"/>
+          <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//InteractionOperand/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
+        </differences>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//InteractionOperand/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
+      </submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//InteractionOperand/name"/>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//ControlFlow/name"/>
+      </submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//InteractionOperand/operandInteraction"/>
+      </submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//InteractionOperand/constraint"/>
+      </submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//InteractionOperand/combinedfragment"/>
+      </submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//InteractionOperand/message"/>
+      </submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//InteractionOperand/loopparameters"/>
+      </submatches>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@differences.2" requiredBy="//@matches.0/@submatches.6/@submatches.1/@differences.0">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EModelElement/eAnnotations"/>
+        <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//InteractionOperand/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@differences.2" requiredBy="//@matches.0/@submatches.6/@submatches.0/@differences.0">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EModelElement/eAnnotations"/>
+        <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//InteractionOperand/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@differences.2">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+        <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//InteractionOperand/operandInteraction"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@differences.2" requiredBy="//@matches.0/@differences.12" kind="MOVE">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+        <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//InteractionOperand/name"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@differences.2">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+        <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//InteractionOperand/constraint"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@differences.2">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+        <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//InteractionOperand/combinedfragment"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@differences.2">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+        <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//InteractionOperand/message"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@differences.2">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+        <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//InteractionOperand/loopparameters"/>
+      </differences>
+      <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//InteractionOperand"/>
+    </submatches>
+    <submatches>
+      <submatches>
+        <submatches>
+          <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//CombinedFragment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"/>
+        </submatches>
+        <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@submatches.7/@differences.1">
+          <reference href="http://www.eclipse.org/emf/2002/Ecore#//EAnnotation/details"/>
+          <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//CombinedFragment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"/>
+        </differences>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//CombinedFragment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"/>
+      </submatches>
+      <submatches>
+        <submatches>
+          <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//CombinedFragment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
+        </submatches>
+        <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@submatches.7/@differences.0">
+          <reference href="http://www.eclipse.org/emf/2002/Ecore#//EAnnotation/details"/>
+          <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//CombinedFragment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
+        </differences>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//CombinedFragment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
+      </submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//CombinedFragment/id"/>
+      </submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//CombinedFragment/type"/>
+      </submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//CombinedFragment/operand"/>
+      </submatches>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@differences.1" requiredBy="//@matches.0/@submatches.7/@submatches.1/@differences.0">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EModelElement/eAnnotations"/>
+        <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//CombinedFragment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@differences.1" requiredBy="//@matches.0/@submatches.7/@submatches.0/@differences.0">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EModelElement/eAnnotations"/>
+        <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//CombinedFragment/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@differences.1">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+        <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//CombinedFragment/id"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@differences.1">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+        <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//CombinedFragment/type"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@differences.1">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+        <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//CombinedFragment/operand"/>
+      </differences>
+      <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//CombinedFragment"/>
+    </submatches>
+    <submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//OperatorType/Opt"/>
+      </submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//OperatorType/Alt"/>
+      </submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//OperatorType/Loop"/>
+      </submatches>
+      <submatches>
+        <differences xsi:type="compare:AttributeChange" kind="CHANGE">
+          <attribute href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
+        </differences>
+        <differences xsi:type="compare:AttributeChange" kind="CHANGE">
+          <attribute href="http://www.eclipse.org/emf/2002/Ecore#//EEnumLiteral/literal"/>
+        </differences>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//OperatorType/Par"/>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//ControlType/Parallel"/>
+      </submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//OperatorType/Break"/>
+      </submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//OperatorType/Strict"/>
+      </submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//OperatorType/Seq"/>
+      </submatches>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@differences.4">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EEnum/eLiterals"/>
+        <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//OperatorType/Opt"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@differences.4">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EEnum/eLiterals"/>
+        <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//OperatorType/Alt"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@differences.4">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EEnum/eLiterals"/>
+        <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//OperatorType/Loop"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@differences.4" requiredBy="//@matches.0/@differences.11" kind="MOVE">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EEnum/eLiterals"/>
+        <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//OperatorType/Par"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@differences.4">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EEnum/eLiterals"/>
+        <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//OperatorType/Break"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@differences.4">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EEnum/eLiterals"/>
+        <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//OperatorType/Strict"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@differences.4">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EEnum/eLiterals"/>
+        <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//OperatorType/Seq"/>
+      </differences>
+      <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//OperatorType"/>
+    </submatches>
+    <submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//Interaction/label"/>
+      </submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//Interaction/combinedfragment"/>
+      </submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//Interaction/message"/>
+      </submatches>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@differences.0">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+        <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//Interaction/label"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@differences.0">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+        <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//Interaction/combinedfragment"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@differences.0">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+        <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//Interaction/message"/>
+      </differences>
+      <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//Interaction"/>
+    </submatches>
+    <submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//Message/id"/>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//Message/id"/>
+      </submatches>
+      <submatches>
+        <differences xsi:type="compare:AttributeChange" kind="CHANGE">
+          <attribute href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
+        </differences>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//Message/annotation"/>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//Message/description"/>
+      </submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//Message/target"/>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//Message/target"/>
+      </submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//Message/source"/>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//Message/source"/>
+      </submatches>
+      <submatches>
+        <differences xsi:type="compare:ReferenceChange" requiredBy="//@matches.0/@submatches.10/@differences.1 //@matches.0/@submatches.17/@differences.3" kind="CHANGE">
+          <reference href="http://www.eclipse.org/emf/2002/Ecore#//EReference/eOpposite"/>
+          <value href="platform:/resource/Delta_MM/mM_DSI.ecore#//ControlFlow/message"/>
+        </differences>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//Message/sequencegroup"/>
+      </submatches>
+      <differences xsi:type="compare:ReferenceChange" kind="MOVE">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+        <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//Message/source"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@submatches.10/@submatches.4/@differences.0 //@matches.0/@submatches.17/@submatches.4/@differences.0" kind="DELETE">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+        <value href="platform:/resource/Delta_MM/mM_DSI.ecore#//Message/sequencegroup"/>
+      </differences>
+      <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//Message"/>
+      <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//Message"/>
+    </submatches>
+    <submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//LifeLine/id"/>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//LifeLine/id"/>
+      </submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//LifeLine/name"/>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//LifeLine/name"/>
+      </submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//LifeLine/hasactivation"/>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//LifeLine/hasactivation"/>
+      </submatches>
+      <differences xsi:type="compare:ReferenceChange" kind="MOVE">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+        <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//LifeLine/name"/>
+      </differences>
+      <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//LifeLine"/>
+      <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//LifeLine"/>
+    </submatches>
+    <submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//SequenceDiagram/name"/>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//SequenceDiagram/name"/>
+      </submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//SequenceDiagram/lifeline"/>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//SequenceDiagram/lifeline"/>
+      </submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//SequenceDiagram/interaction"/>
+      </submatches>
+      <submatches>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//SequenceDiagram/definition"/>
+      </submatches>
+      <submatches>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//SequenceDiagram/message"/>
+      </submatches>
+      <submatches>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//SequenceDiagram/controlFlow"/>
+      </submatches>
+      <differences xsi:type="compare:ReferenceChange">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+        <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//SequenceDiagram/interaction"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" kind="DELETE">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+        <value href="platform:/resource/Delta_MM/mM_DSI.ecore#//SequenceDiagram/message"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" kind="DELETE">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+        <value href="platform:/resource/Delta_MM/mM_DSI.ecore#//SequenceDiagram/controlFlow"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" kind="DELETE">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+        <value href="platform:/resource/Delta_MM/mM_DSI.ecore#//SequenceDiagram/definition"/>
+      </differences>
+      <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//SequenceDiagram"/>
+      <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//SequenceDiagram"/>
+    </submatches>
+    <submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//ValueSpecification/LoopMin"/>
+      </submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//ValueSpecification/LoopMax"/>
+      </submatches>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@differences.9">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+        <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//ValueSpecification/LoopMin"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@differences.9">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+        <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//ValueSpecification/LoopMax"/>
+      </differences>
+      <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//ValueSpecification"/>
+    </submatches>
+    <submatches>
+      <submatches>
+        <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//ActivationBar/id"/>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//Activation/id"/>
+      </submatches>
+      <differences xsi:type="compare:AttributeChange" kind="CHANGE">
+        <attribute href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
+      </differences>
+      <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//ActivationBar"/>
+      <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//Activation"/>
+    </submatches>
+    <submatches>
+      <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//Object"/>
+      <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//Object"/>
+    </submatches>
+    <submatches>
+      <left href="platform:/resource/Delta_MM/mM_DSE.ecore#//Actor"/>
+      <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//Actor"/>
+    </submatches>
+    <submatches>
+      <submatches>
+        <submatches>
+          <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//ControlFlow/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"/>
+        </submatches>
+        <differences xsi:type="compare:ReferenceChange" requiredBy="//@matches.0/@submatches.17/@differences.1" kind="DELETE">
+          <reference href="http://www.eclipse.org/emf/2002/Ecore#//EAnnotation/details"/>
+          <value href="platform:/resource/Delta_MM/mM_DSI.ecore#//ControlFlow/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"/>
+        </differences>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//ControlFlow/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"/>
+      </submatches>
+      <submatches>
+        <submatches>
+          <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//ControlFlow/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
+        </submatches>
+        <differences xsi:type="compare:ReferenceChange" requiredBy="//@matches.0/@submatches.17/@differences.0" kind="DELETE">
+          <reference href="http://www.eclipse.org/emf/2002/Ecore#//EAnnotation/details"/>
+          <value href="platform:/resource/Delta_MM/mM_DSI.ecore#//ControlFlow/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
+        </differences>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//ControlFlow/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
+      </submatches>
+      <submatches>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//ControlFlow/clause"/>
+      </submatches>
+      <submatches>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//ControlFlow/repCount"/>
+      </submatches>
+      <submatches>
+        <differences xsi:type="compare:ReferenceChange" requiredBy="//@matches.0/@submatches.17/@differences.3 //@matches.0/@submatches.10/@differences.1" kind="CHANGE">
+          <reference href="http://www.eclipse.org/emf/2002/Ecore#//EReference/eOpposite"/>
+          <value href="platform:/resource/Delta_MM/mM_DSI.ecore#//Message/sequencegroup"/>
+        </differences>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//ControlFlow/message"/>
+      </submatches>
+      <submatches>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//ControlFlow/sequenceflow"/>
+      </submatches>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@submatches.17/@submatches.1/@differences.0" requiredBy="//@matches.0/@differences.12" kind="DELETE">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EModelElement/eAnnotations"/>
+        <value href="platform:/resource/Delta_MM/mM_DSI.ecore#//ControlFlow/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@submatches.17/@submatches.0/@differences.0" requiredBy="//@matches.0/@differences.12" kind="DELETE">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EModelElement/eAnnotations"/>
+        <value href="platform:/resource/Delta_MM/mM_DSI.ecore#//ControlFlow/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requiredBy="//@matches.0/@differences.12" kind="DELETE">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+        <value href="platform:/resource/Delta_MM/mM_DSI.ecore#//ControlFlow/clause"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@submatches.10/@submatches.4/@differences.0 //@matches.0/@submatches.17/@submatches.4/@differences.0" requiredBy="//@matches.0/@differences.12" kind="DELETE">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+        <value href="platform:/resource/Delta_MM/mM_DSI.ecore#//ControlFlow/message"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requiredBy="//@matches.0/@differences.12" kind="DELETE">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+        <value href="platform:/resource/Delta_MM/mM_DSI.ecore#//ControlFlow/sequenceflow"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requiredBy="//@matches.0/@differences.12" kind="DELETE">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+        <value href="platform:/resource/Delta_MM/mM_DSI.ecore#//ControlFlow/repCount"/>
+      </differences>
+      <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//ControlFlow"/>
+    </submatches>
+    <submatches>
+      <submatches>
+        <submatches>
+          <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//SequenceFlow/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"/>
+        </submatches>
+        <differences xsi:type="compare:ReferenceChange" requiredBy="//@matches.0/@submatches.18/@differences.1" kind="DELETE">
+          <reference href="http://www.eclipse.org/emf/2002/Ecore#//EAnnotation/details"/>
+          <value href="platform:/resource/Delta_MM/mM_DSI.ecore#//SequenceFlow/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%/@details.0"/>
+        </differences>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//SequenceFlow/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"/>
+      </submatches>
+      <submatches>
+        <submatches>
+          <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//SequenceFlow/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
+        </submatches>
+        <differences xsi:type="compare:ReferenceChange" requiredBy="//@matches.0/@submatches.18/@differences.0" kind="DELETE">
+          <reference href="http://www.eclipse.org/emf/2002/Ecore#//EAnnotation/details"/>
+          <value href="platform:/resource/Delta_MM/mM_DSI.ecore#//SequenceFlow/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%/@details.0"/>
+        </differences>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//SequenceFlow/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
+      </submatches>
+      <submatches>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//SequenceFlow/id"/>
+      </submatches>
+      <submatches>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//SequenceFlow/type"/>
+      </submatches>
+      <submatches>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//SequenceFlow/controlflow"/>
+      </submatches>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@submatches.18/@submatches.1/@differences.0" requiredBy="//@matches.0/@differences.10" kind="DELETE">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EModelElement/eAnnotations"/>
+        <value href="platform:/resource/Delta_MM/mM_DSI.ecore#//SequenceFlow/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%2FOCL%"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@submatches.18/@submatches.0/@differences.0" requiredBy="//@matches.0/@differences.10" kind="DELETE">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EModelElement/eAnnotations"/>
+        <value href="platform:/resource/Delta_MM/mM_DSI.ecore#//SequenceFlow/%http:%2F%2Fwww.eclipse.org%2Femf%2F2002%2FEcore%"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requiredBy="//@matches.0/@differences.10" kind="DELETE">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+        <value href="platform:/resource/Delta_MM/mM_DSI.ecore#//SequenceFlow/id"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requiredBy="//@matches.0/@differences.10" kind="DELETE">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+        <value href="platform:/resource/Delta_MM/mM_DSI.ecore#//SequenceFlow/type"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requiredBy="//@matches.0/@differences.10" kind="DELETE">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EClass/eStructuralFeatures"/>
+        <value href="platform:/resource/Delta_MM/mM_DSI.ecore#//SequenceFlow/controlflow"/>
+      </differences>
+      <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//SequenceFlow"/>
+    </submatches>
+    <submatches>
+      <submatches>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//ControlType/Alternative"/>
+      </submatches>
+      <submatches>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//ControlType/Repetition"/>
+      </submatches>
+      <submatches>
+        <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//ControlType/Option"/>
+      </submatches>
+      <differences xsi:type="compare:ReferenceChange" requiredBy="//@matches.0/@differences.11" kind="DELETE">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EEnum/eLiterals"/>
+        <value href="platform:/resource/Delta_MM/mM_DSI.ecore#//ControlType/Alternative"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requiredBy="//@matches.0/@differences.11" kind="DELETE">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EEnum/eLiterals"/>
+        <value href="platform:/resource/Delta_MM/mM_DSI.ecore#//ControlType/Repetition"/>
+      </differences>
+      <differences xsi:type="compare:ReferenceChange" requiredBy="//@matches.0/@differences.11" kind="DELETE">
+        <reference href="http://www.eclipse.org/emf/2002/Ecore#//EEnum/eLiterals"/>
+        <value href="platform:/resource/Delta_MM/mM_DSI.ecore#//ControlType/Option"/>
+      </differences>
+      <right href="platform:/resource/Delta_MM/mM_DSI.ecore#//ControlType"/>
+    </submatches>
+    <differences xsi:type="compare:ReferenceChange" requiredBy="//@matches.0/@submatches.9/@differences.0 //@matches.0/@submatches.9/@differences.1 //@matches.0/@submatches.9/@differences.2">
+      <reference href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/eClassifiers"/>
+      <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//Interaction"/>
+    </differences>
+    <differences xsi:type="compare:ReferenceChange" requiredBy="//@matches.0/@submatches.7/@differences.0 //@matches.0/@submatches.7/@differences.1 //@matches.0/@submatches.7/@differences.2 //@matches.0/@submatches.7/@differences.3 //@matches.0/@submatches.7/@differences.4">
+      <reference href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/eClassifiers"/>
+      <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//CombinedFragment"/>
+    </differences>
+    <differences xsi:type="compare:ReferenceChange" requiredBy="//@matches.0/@submatches.6/@differences.0 //@matches.0/@submatches.6/@differences.1 //@matches.0/@submatches.6/@differences.2 //@matches.0/@submatches.6/@differences.3 //@matches.0/@submatches.6/@differences.4 //@matches.0/@submatches.6/@differences.5 //@matches.0/@submatches.6/@differences.6 //@matches.0/@submatches.6/@differences.7">
+      <reference href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/eClassifiers"/>
+      <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//InteractionOperand"/>
+    </differences>
+    <differences xsi:type="compare:ReferenceChange" requiredBy="//@matches.0/@submatches.5/@differences.0 //@matches.0/@submatches.5/@differences.1 //@matches.0/@submatches.5/@differences.2">
+      <reference href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/eClassifiers"/>
+      <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//OperandConstraint"/>
+    </differences>
+    <differences xsi:type="compare:ReferenceChange" requiredBy="//@matches.0/@submatches.8/@differences.0 //@matches.0/@submatches.8/@differences.1 //@matches.0/@submatches.8/@differences.2 //@matches.0/@submatches.8/@differences.3 //@matches.0/@submatches.8/@differences.4 //@matches.0/@submatches.8/@differences.5 //@matches.0/@submatches.8/@differences.6">
+      <reference href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/eClassifiers"/>
+      <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//OperatorType"/>
+    </differences>
+    <differences xsi:type="compare:ReferenceChange" kind="MOVE">
+      <reference href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/eClassifiers"/>
+      <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//SelfMessage"/>
+    </differences>
+    <differences xsi:type="compare:ReferenceChange" kind="MOVE">
+      <reference href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/eClassifiers"/>
+      <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//Reply"/>
+    </differences>
+    <differences xsi:type="compare:ReferenceChange" kind="MOVE">
+      <reference href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/eClassifiers"/>
+      <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//Synchron"/>
+    </differences>
+    <differences xsi:type="compare:ReferenceChange" kind="MOVE">
+      <reference href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/eClassifiers"/>
+      <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//Asynchron"/>
+    </differences>
+    <differences xsi:type="compare:ReferenceChange" requiredBy="//@matches.0/@submatches.13/@differences.0 //@matches.0/@submatches.13/@differences.1">
+      <reference href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/eClassifiers"/>
+      <value href="platform:/resource/Delta_MM/mM_DSE.ecore#//ValueSpecification"/>
+    </differences>
+    <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@submatches.18/@differences.0 //@matches.0/@submatches.18/@differences.1 //@matches.0/@submatches.18/@differences.2 //@matches.0/@submatches.18/@differences.3 //@matches.0/@submatches.18/@differences.4" kind="DELETE">
+      <reference href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/eClassifiers"/>
+      <value href="platform:/resource/Delta_MM/mM_DSI.ecore#//SequenceFlow"/>
+    </differences>
+    <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@submatches.19/@differences.0 //@matches.0/@submatches.19/@differences.1 //@matches.0/@submatches.19/@differences.2 //@matches.0/@submatches.8/@differences.3" kind="DELETE">
+      <reference href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/eClassifiers"/>
+      <value href="platform:/resource/Delta_MM/mM_DSI.ecore#//ControlType"/>
+    </differences>
+    <differences xsi:type="compare:ReferenceChange" requires="//@matches.0/@submatches.17/@differences.0 //@matches.0/@submatches.17/@differences.1 //@matches.0/@submatches.17/@differences.2 //@matches.0/@submatches.17/@differences.3 //@matches.0/@submatches.17/@differences.4 //@matches.0/@submatches.17/@differences.5 //@matches.0/@submatches.6/@differences.3" kind="DELETE">
+      <reference href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/eClassifiers"/>
+      <value href="platform:/resource/Delta_MM/mM_DSI.ecore#//ControlFlow"/>
+    </differences>
+    <differences xsi:type="compare:AttributeChange" kind="CHANGE">
+      <attribute href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
+    </differences>
+    <differences xsi:type="compare:AttributeChange" kind="CHANGE">
+      <attribute href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/nsURI"/>
+    </differences>
+    <differences xsi:type="compare:AttributeChange" kind="CHANGE">
+      <attribute href="http://www.eclipse.org/emf/2002/Ecore#//EPackage/nsPrefix"/>
+    </differences>
+    <left href="platform:/resource/Delta_MM/mM_DSE.ecore#/"/>
+    <right href="platform:/resource/Delta_MM/mM_DSI.ecore#/"/>
+  </matches>
+</compare:Comparison>
