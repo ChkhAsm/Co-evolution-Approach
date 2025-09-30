@@ -1,0 +1,56 @@
+fmod SEQUENCE_DIAGRAM is
+  including STRING .
+  including NAT .
+
+  *** Identifiers
+  sorts LifeLineId MessageId Condition .
+  subsort String < LifeLineId MessageId Condition .
+
+  *** Sequence diagram
+  sort SequenceDiagram .
+  op none : -> SequenceDiagram [ctor] .
+  subsort Interaction < SequenceDiagram .
+
+  *** Lifelines
+  sorts LifeLine LifeLineType .
+  op (_:_) : LifeLineId LifeLineType -> LifeLine .
+  ops Object Actor : -> LifeLineType .
+
+  *** Messages
+  sort Interaction .
+  sorts Message MessageType .
+  ops Asynchron Synchron Reply SelfMessage CreateMessage : -> MessageType .
+  op {_:_} : MessageId MessageType -> Message .
+  sort MessageExchange .
+  subsort MessageExchange < Interaction .
+  op <_,_,_> : LifeLine Message LifeLine -> MessageExchange .
+
+  *** Combined fragments 
+  sorts CombFragment OperandName OperandConstraint LoopStatus .
+  subsort CombFragment < Interaction .
+  subsort String < OperandConstraint .
+  subsort String < OperandName .
+  ops Entry Exist : -> LoopStatus .
+
+  op Par{_:_} : OperandName Interaction -> CombFragment .
+  op Par{_:_} : OperandName CombFragment -> CombFragment .
+  op Opt{_:_} : OperandConstraint MessageExchange -> CombFragment .
+  op Opt{_:_} : OperandConstraint CombFragment -> CombFragment .
+  op Alt{_:_} : OperandConstraint MessageExchange -> CombFragment .
+  op Alt{_:_} : OperandConstraint CombFragment -> CombFragment .
+  op Loop{_,_,_:_} : Nat Nat Condition LoopStatus -> CombFragment .
+  op Loop{_,_,_:_} : Nat Nat Condition MessageExchange -> CombFragment .
+  op Loop{_,_,_:_} : Nat Nat Condition CombFragment -> CombFragment .
+
+  *** Nested fragments
+  sort Nestedfragments .
+  subsort Nestedfragments < Interaction .
+  op [_|_] : CombFragment CombFragment -> Nestedfragments .
+
+  ***  Message list
+  sort MsgList .
+  subsort MessageExchange < MsgList .
+  op NoMsg : -> MsgList [ctor] .
+  op _;_ : MsgList MsgList -> MsgList [ctor assoc id: NoMsg] .
+
+endfm

@@ -1,0 +1,155 @@
+-- @path MMinit=/UML1.5_to_UML2.5/MetaModels/mM_DSI.ecore (UML 1.5)
+-- @path MMevol=/UML1.5_to_UML2.5/MetaModels/mM_DSE.ecore (UML 2.5)
+
+module TransformationMM1toMM2;
+create OUT : MMevol from IN : MMinit;
+
+-- Helpers
+
+-- Helper pour mapper les types de contrôle (ControlType) vers les types d'opérateurs (OperatorType)
+helper def : mapControlTypeToOperator(cType : MMinit!ControlType) : MMevol!OperatorType =
+    if cType = #Alternative then
+        #Alt
+    else if cType = #Repetition then
+        #Loop
+    else if cType = #Option then
+        #Opt
+    else if cType = #Parallel then
+        #Par
+    else
+        #Opt -- Valeur par défaut
+    endif endif endif endif;
+
+-- Helper pour vérifier si le ControlFlow est de type Répétition
+
+-- ✅ Helper pour compter les messages répétés et définir LoopMax
+helper def : calculateLoopMax(flow : MMinit!ControlFlow) : Integer =
+    if flow.sequenceflow.type = #Repetition then
+        flow.message->size()  -- Compte le nombre de messages dans le flux
+    else
+        0  -- Retourne 0 si ce n'est pas une répétition
+    endif;
+
+
+-- ✅ Règles
+
+-- ✅ Règle pour transformer un SequenceDiagram en un SequenceDiagram cible
+rule SequenceDiagram2SequenceDiagram {
+    from src : MMinit!SequenceDiagram
+    to
+        tgtDiagram : MMevol!SequenceDiagram (
+            name <- src.name,
+            lifeline <- src.lifeline->collect(e | thisModule.resolveTemp(e, 'tgt')),
+            interaction <- thisModule.resolveTemp(src, 'tgtInteraction') -- Référence à l'Interaction
+        ),
+        tgtInteraction : MMevol!Interaction (
+            label <- src.definition,  -- Assignation de la valeur de sequencediagram.definition à interaction.label
+            message <- src.message->collect(m | thisModule.resolveTemp(m, 'tgt')),
+            combinedfragment <- src.controlFlow->collect(cf | thisModule.resolveTemp(cf, 'tgtCombinedFragment'))
+        )
+}
+
+-- ✅ Règle pour transformer une LifeLine en une LifeLine cible
+rule LifeLine2LifeLine {
+    from src : MMinit!LifeLine
+    to tgt : MMevol!LifeLine (
+        id <- src.id,
+        name <- src.name,
+        hasactivation <- src.hasactivation->collect(a | thisModule.resolveTemp(a, 'tgt'))
+    )
+}
+
+-- ✅ Règle pour transformer un Actor en un Actor cible
+rule Actor2Actor extends LifeLine2LifeLine {
+    from src : MMinit!Actor
+    to tgt : MMevol!Actor
+}
+
+-- ✅ Règle pour transformer un Object en un Object cible
+rule Object2Object extends LifeLine2LifeLine {
+    from src : MMinit!Object
+    to tgt : MMevol!Object
+}
+
+-- ✅ Règle pour transformer une Activation en une ActivationBar cible
+rule Activation2ActivationBar {
+    from src : MMinit!Activation
+    to tgt : MMevol!ActivationBar (
+        id <- src.id
+    )
+}
+
+-- ✅ Règle pour transformer un Message en un Message cible
+rule Message2Message {
+    from src : MMinit!Message
+    to tgt : MMevol!Message (
+        annotation <- src.description,
+        id <- src.id,
+        source <- if not src.source.oclIsUndefined() then thisModule.resolveTemp(src.source, 'tgt') else OclUndefined endif,
+        target <- if not src.target.oclIsUndefined() then thisModule.resolveTemp(src.target, 'tgt') else OclUndefined endif
+    )
+}
+
+-- ✅ Règle pour transformer un Asynchron en un Asynchron cible
+rule Asynchron2Asynchron extends Message2Message {
+    from src : MMinit!Asynchron
+    to tgt : MMevol!Asynchron
+}
+
+-- ✅ Règle pour transformer un Synchron en un Synchron cible
+rule Synchron2Synchron extends Message2Message {
+    from src : MMinit!Synchron
+    to tgt : MMevol!Synchron
+}
+
+-- ✅ Règle pour transformer un Reply en un Reply cible
+rule Reply2Reply extends Message2Message {
+    from src : MMinit!Reply
+    to tgt : MMevol!Reply
+}
+
+-- ✅ Règle pour transformer un SelfMessage en un SelfMessage cible
+rule SelfMessage2SelfMessage extends Message2Message {
+    from src : MMinit!SelfMessage
+    to tgt : MMevol!SelfMessage
+}
+
+-- ✅ Règle pour transformer un CreatMessage en un CreatMessage cible
+rule CreatMessage2CreatMessage extends Message2Message {
+    from src : MMinit!CreatMessage
+    to tgt : MMevol!CreatMessage (
+        isCreation <- src.isCreation
+    )
+}
+
+-- ✅ Règle pour transformer un SequenceFlow en un CombinedFragment avec ses InteractionOperand
+rule SequenceFlow2CombinedFragment {
+    from src : MMinit!SequenceFlow
+    to 
+        tgtCombinedFragment : MMevol!CombinedFragment (
+            id <- src.id,
+            type <- thisModule.mapControlTypeToOperator(src.type),
+            operand <- src.controlflow->collect(cf | thisModule.resolveTemp(cf, 'tgtOperand')) -- Les Operands sont bien inclus
+        )
+}
+
+-- ✅ Règle fusionnée pour transformer un ControlFlow en un InteractionOperand bien structuré
+
+rule ControlFlow2InteractionOperand {
+    from src : MMinit!ControlFlow
+    to 
+        tgtOperand : MMevol!InteractionOperand (
+            name <- src.name,
+            constraint <- tgtConstraint,
+            message <- src.message->collect(m | thisModule.resolveTemp(m, 'tgt')),
+            combinedfragment <- if not src.sequenceflow.oclIsUndefined() and src.sequenceflow.oclIsKindOf(MMinit!SequenceFlow) then
+                Sequence { thisModule.resolveTemp(src.sequenceflow, 'tgtCombinedFragment') }
+            else
+                Sequence {}
+            endif
+        ),
+
+        tgtConstraint : MMevol!OperandConstraint (
+            guard <- src.clause
+        )
+}

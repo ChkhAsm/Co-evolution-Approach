@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="mM_DSI" nsURI="http://www.example.org/mM_DSI" nsPrefix="mM_DSI">
+  <eClassifiers xsi:type="ecore:EClass" name="SequenceDiagram">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lifeline" lowerBound="1"
+        upperBound="-1" eType="#//LifeLine" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="message" lowerBound="1"
+        upperBound="-1" eType="#//Message" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controlFlow" upperBound="-1"
+        eType="#//SequenceFlow" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="definition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LifeLine" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasactivation" upperBound="-1"
+        eType="#//Activation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Message" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//LifeLine"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="#//LifeLine"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sequencegroup" eType="#//ControlFlow"
+        eOpposite="#//ControlFlow/message"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SequenceFlow">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="Controlflowhavesequencegroup" value="self.controlflow->size() >= 1"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="Controlflowhavesequencegroup"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ControlType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controlflow" lowerBound="1"
+        upperBound="-1" eType="#//ControlFlow" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Object" eSuperTypes="#//LifeLine"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Actor" eSuperTypes="#//LifeLine"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="ControlType">
+    <eLiterals name="Alternative"/>
+    <eLiterals name="Repetition" value="1"/>
+    <eLiterals name="Option" value="2"/>
+    <eLiterals name="Parallel" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Asynchron" eSuperTypes="#//Message">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="asynchronMessageMustHaveDifferentSourceAndTarget" value="self.source &lt;> self.target"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="asynchronMessageMustHaveDifferentSourceAndTarget"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Synchron" eSuperTypes="#//Message">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="synchronMessageMustHaveDifferentSourceAndTarget" value="self.source &lt;> self.target&#xA;"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="synchronMessageMustHaveDifferentSourceAndTarget"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Reply" eSuperTypes="#//Message">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="replyMessageMustHaveDifferentSourceAndTarget" value="self.source &lt;> self.target"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="replyMessageMustHaveDifferentSourceAndTarget"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SelfMessage" eSuperTypes="#//Message">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="selfMessageMustHaveSameSourceAndTarget" value="self.source = self.target"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="selfMessageMustHaveSameSourceAndTarget"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CreatMessage" eSuperTypes="#//Message">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="creatMessageMustHaveNoSource" value="self.source.oclIsUndefined()"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="creatMessageMustHaveNoSource"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isCreation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Activation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlFlow">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="SequenceGroupClauseNotEmpty" value="not self.clause.oclIsUndefined() and self.clause &lt;> ''"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="SequenceGroupClauseNotEmpty"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="clause" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="message" upperBound="-1"
+        eType="#//Message" eOpposite="#//Message/sequencegroup"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sequenceflow" eType="#//SequenceFlow"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="repCount" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+</ecore:EPackage>

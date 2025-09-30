@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="mM_DSE" nsURI="http://www.example.org/mM_DSE" nsPrefix="mM_DSE">
+  <eClassifiers xsi:type="ecore:EClass" name="SequenceDiagram">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lifeline" lowerBound="1"
+        upperBound="-1" eType="#//LifeLine" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interaction" lowerBound="1"
+        upperBound="-1" eType="#//Interaction" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LifeLine" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasactivation" upperBound="-1"
+        eType="#//ActivationBar" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Message" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="#//LifeLine"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//LifeLine"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="annotation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Object" eSuperTypes="#//LifeLine"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Actor" eSuperTypes="#//LifeLine"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Interaction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="combinedfragment" upperBound="-1"
+        eType="#//CombinedFragment" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="message" upperBound="-1"
+        eType="#//Message" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CombinedFragment">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="CombinedFragmentMustHaveOperand" value="self.operand->size() >= 1"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="CombinedFragmentMustHaveOperand"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//OperatorType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operand" lowerBound="1"
+        upperBound="-1" eType="#//InteractionOperand" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractionOperand">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="InteractionOperandExactlyOneGuard" value="self.constraint->size() = 1"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="InteractionOperandExactlyOneGuard"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operandInteraction" upperBound="-1"
+        eType="#//Interaction" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" eType="#//OperandConstraint"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="combinedfragment" upperBound="-1"
+        eType="#//CombinedFragment" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="message" upperBound="-1"
+        eType="#//Message" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="loopparameters" eType="#//ValueSpecification"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OperandConstraint">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="OperandConstraintGuardNotEmpty" value="not self.guard.oclIsUndefined() and self.guard &lt;> ''"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="OperandConstraintGuardNotEmpty"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="guard" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OperatorType">
+    <eLiterals name="Opt"/>
+    <eLiterals name="Alt" value="1"/>
+    <eLiterals name="Loop" value="2"/>
+    <eLiterals name="Par" value="3"/>
+    <eLiterals name="Break" value="4"/>
+    <eLiterals name="Strict" value="5"/>
+    <eLiterals name="Seq" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CreatMessage" eSuperTypes="#//Message">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="CreatMessageSourceTarget" value="self.source.oclIsUndefined()"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="CreatMessageSourceTarget"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isCreation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SelfMessage" eSuperTypes="#//Message">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="SelfMessageSourceTarget" value="self.source = self.target"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="SelfMessageSourceTarget"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Reply" eSuperTypes="#//Message">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="ReplySourceTarget" value="self.source &lt;> self.target"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="ReplySourceTarget"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Synchron" eSuperTypes="#//Message">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="SynchronSourceTarget" value="self.source &lt;> self.target"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="SynchronSourceTarget"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Asynchron" eSuperTypes="#//Message">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="AsynchronSourceTarget" value="self.source &lt;> self.target"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="AsynchronSourceTarget"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivationBar">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueSpecification">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="LoopMin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="LoopMax" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+</ecore:EPackage>
